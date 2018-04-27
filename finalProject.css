@@ -1,3 +1,22 @@
 /*Anthony Schlecht and Andrew Enriquez*/
 /*CSC 337 SP18 002*/
 /*This is the the CSS file for finalProject.html*/
+
+h1 {
+  text-align: center;
+
+}
+
+#center {
+  text-align: center;
+  font-size: 24pt;
+  font-weight: bold;
+
+}
+#main {
+  font-family: Georgia, Times New Roman, serif;
+  text-shadow: 3px 3px 8px #999999;
+  font-size: 14pt;
+  font-weight: bold;
+  text-align: center;
+}
