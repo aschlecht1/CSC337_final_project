@@ -1,9 +1,20 @@
 /*Anthony Schlecht and Andrew Enriquez*/
 /*CSC 337 SP18 002*/
 /*This is the the CSS file for finalProject.html*/
-
+body {
+  background-color: #fefcf4;
+}
 h1 {
-  text-align: center;
+  text-align: left;
+  font-size: 18pt;
+  border-style: solid;
+  border-color: #ed7d28;
+  border-width: 4px;
+  background-size: 50%;
+  background-color: #ed7d28;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
 
 }
 
@@ -13,10 +24,30 @@ h1 {
   font-weight: bold;
 
 }
+/*
+#wrap {
+  width:80%;
+  background-color: #3d6dba;
+  margin: auto;
+
+}
+*/
+#main div {
+	background-color: #ed7d28;
+	border-radius: 5px;
+	box-shadow: 0 0 15px gray;
+	float: left;
+	margin: 2%;
+	text-align: center;
+	width: 330px;
+	height: 330px;
+}
 #main {
-  font-family: Georgia, Times New Roman, serif;
-  text-shadow: 3px 3px 8px #999999;
+  font-family: Georgia, serif;
   font-size: 14pt;
   font-weight: bold;
   text-align: center;
+  width:auto;
+  margin: auto;
+  /*background-color: green;*/
 }
