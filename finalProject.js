@@ -1,13 +1,64 @@
+(function() {
+	"use strict";
+	window.onload = function() {
+		var search = searchPath();
+		//var post = startInterval();
+		//var search1 = searchPath();
+		//var initSetInterval = setInterval(startInterval, 100000);  //Updates SNR values for each city
+		 //every 5 sec (real like every 10 min to mimic WSPR database updating every 10 min)
+	};
+
+	/*
+	//Updates the database every 5 sec using a POST (kina like a fetch request with additional info) request
+	function startInterval() {
+
+		var fetchOptions = {  
+			method : 'POST',
+			headers : {
+				'Accept': 'application/json',
+				'Content-Type' : 'application/json'
+			},
+			body : JSON.stringify(message)
+		};
+		var url = "http://localhost:3000";
+		fetch(url, fetchOptions)
+			.then(checkStatus)
+			.then(function(responseText) {
+			console.log(responseText);
+			})
+			.catch(function(error) {
+				console.log(error);
+   			});
+	}
+
+	*/
+		function searchPath() {
+		var url = "http://localhost:3000";
+		fetch(url)
+			.then(checkStatus)
+			//Success: Do something with responseText
+			.then(function(responseText) { 
+				console.log(responseText);
+				}
+			})
+			//Error: Do something with error
+			.catch(function(error) {
+				//document.getElementById("errors").innerHTML = error;
+			});
+	}
+})();
+
 /*Anthony Schlecht and Andrew Enriquez*/
 /*CSC 337 SP18 002*/
 /*This is the the javaScript file for finalProject.html*/
+/*
 (function() {
 	"use strict";
 	window.onload = function() {
 		document.getElementById("search").onclick = searchPath;
 		document.getElementById("reset").onclick = resetPage;
 		document.getElementById("SNRdiv").addEventListener("mouseover", mouseOverSNR());
-		setInterval(startInterval, 5000);  //Updates SNR values for each city
+		var initSetInterval = setInterval(startInterval, 5000);  //Updates SNR values for each city
 		 //every 5 sec (real like every 10 min to mimic WSPR database updating every 10 min)
 	};
 
@@ -64,3 +115,4 @@
 	}
 
 })();
+*/
