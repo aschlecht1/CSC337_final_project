@@ -16,13 +16,23 @@
 	<!---->
 	<body>
     <div id="wrap">
-      <h1>5W HF Propogation Tester</h1>
+      <h1>SNR Data Retrieval Tool</h1>
 
   		<div id="center">
-      	<p>"description of what the website does here"</p>
+      	<p>Signal-to-noise ratio (abbreviated SNR or S/N) is a measure used
+					in science and engineering that compares the level of a desired signal to the level of background noise.
+					</br>
+					</br>
+					SNR is defined as the ratio of signal power to the noise power,
+					often expressed in decibels. A ratio higher than 1:1 (greater than 0 dB)
+					indicates more signal than noise.
+				</br></br>
+					This website will provide SNR values from different cities using a database that
+					updates frequently.
+					</p>
   		</div>
       <div id="main">
-        <div id="city">City</br>
+        <div id="city">City:</br>
           <select>
             <option value="tucson">Tucson</option>
             <!--<option value="phoenix">Phoenix</option>
@@ -31,18 +41,19 @@
           </select>
           <button id="reset">Reset</button>
         </div>
-        <div id="contact city">Contact City</br>
-          <select>
+        <div id="contact city">Contact City:</br>
+          <select id="select">
+						<option value="cleveland">Cleveland</option>
+						<option value="gainesville">Gainesville</option>
+						<option value="losAngeles">Los Angeles</option>
+						<option value="newYork">New York</option>
+						<option value="seattle">Seattle</option>
             <option value="washingtonDC">Washington DC</option>
-            <option value="newYork">New York</option>
-            <option value="cleveland">Cleveland</option>
-            <option value="seattle">Seattle</option>
-            <option value="losAngeles">Los Angeles</option>
-            <option value="gainsville">Gainsville</option>
+
           </select>
           <button id="submit">Submit</button>
         </div>
-        <div id= "SNR">SNR</div>
+        <div id= "SNR">SNR:</div>
       </div>
     </div>
   </body>
