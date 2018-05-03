@@ -1,20 +1,27 @@
-
 /*Anthony Schlecht and Andrew Enriquez*/
 /*CSC 337 SP18 002*/
 /*This is the the javaScript file for finalProject.html*/
-
 (function() {
 	"use strict";
 	window.onload = function() {
 		document.getElementById("submit").onclick = searchPath;
 		document.getElementById("reset").onclick = resetPage;
 		//document.getElementById("SNRdiv").addEventListener("mouseover", mouseOverSNR());
-		//var initSetInterval = setInterval(startInterval, 5000);  //Updates SNR values for each city
-		 //every 5 sec (real like every 10 min to mimic WSPR database updating every 10 min)
+		var initSetInterval = setInterval(startInterval, 20000);  //Updates SNR values for each city
+		 //every 20 sec (Should be every 10 min to mimic WSPR database updating every 10 min with real SNR values)
+		 // WSPR database link (http://wsprnet.org/drupal/wsprnet/spots)
 	};
 
 	//Updates the database every 5 sec using a POST (kina like a fetch request with additional info) request
 	function startInterval() {
+		var randSNR = [];
+		const message = {};
+		for (var i=0; i<=5; i++) {
+			randSNR[i] = randomNumber();
+			//console.log(randSNR[i]);
+		}
+		message["values"] = randSNR;
+
 
 		var fetchOptions = {
 			method : 'POST',
@@ -38,32 +45,25 @@
 
 	//Get data from the database using a fetch request
 	function searchPath() {
-		var url = "http://localhost:3000";
+		var e = document.getElementById("select");
+		var value = e.options[e.selectedIndex].value;
+		var text = e.options[e.selectedIndex].text; 
+		console.log(text);
+		var url = "http://localhost:3000?city=" + text;  //sends a query parameter that can be accessed by the app.GET function to find the index we want
+
 		fetch(url)
 			.then(checkStatus)
-			.then(function(responseText) {
-				//resetPage();
-				var snrInfo = JSON.parse(responseText);
-				console.log(snrInfo);
-				var city = document.getElementById("select");
-				var text = city.options[city.selectedIndex].value;
-				var snrValue = 0;
-				console.log(text);
+			//Success: Do something with responseText
+			.then(function(responseText) { 
+				console.log(responseText);
+				//going to need code to deal with the return JSON
+				var obj = JSON.parse(responseText);
+				console.log(obj[0].value);
 
-				for (var i = 0; i < snrInfo.length; i++) {
-					var snrCity = snrInfo[i]["city"];
-					console.log(snrCity);
-					if (text == snrCity){
-						//console.log(snrInfo[i]["city"]);
-						snrValue = snrInfo[i]["value"]
-						console.log(snrValue);
-					}
-
-				}
 				var SNRchild = document.createElement("p");
 				var elem = document.createElement("img")
 
-				SNRchild.innerHTML = "From Tucson to "+city.options[city.selectedIndex].text+": "+snrValue+" dB";
+				SNRchild.innerHTML = "From Tucson to "+ obj[0].city +": "+obj[0].value+" dB";
 				SNRchild.appendChild(elem);
 				elem.onmouseover = mouseOverSNR;
 				elem.onmouseout = mouseOut;
@@ -71,16 +71,18 @@
 
 				document.getElementById("SNR").appendChild(SNRchild);
 
-				elem.src = text+".PNG";
+				elem.src = obj[0].city +".PNG";
 				elem.setAttribute("height", "120");
-				//elem.setAttribute("width", "1024");
-				//elem.setAttribute("alt", "Flower");
-				//doucment.getElementById("map").appendChild(elem);
+
+
+		
 			})
+			//Error: Do something with error
 			.catch(function(error) {
+				console.log(error);
 			});
-	    //addInfo(thisDivFolder);
 	}
+
 	function clickDown () {
 		if (this.height == 600) {
 			this.setAttribute("height", "120");
@@ -120,4 +122,10 @@
 	    }
 	}
 
+	function randomNumber() {
+		var randomNumberBetween0and40 = (Math.floor(Math.random()*40)).toString();
+		return randomNumberBetween0and40;
+	} 
+
 })();
+

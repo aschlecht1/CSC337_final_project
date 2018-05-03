@@ -1,6 +1,10 @@
 /*Anthony Schlecht and Andrew Enriquez*/
 /*CSC 337 SP18 002*/
 /*This is the the CSS file for finalProject.html*/
+
+/*Anthony Schlecht and Andrew Enriquez*/
+/*CSC 337 SP18 002*/
+/*This is the the CSS file for finalProject.html*/
 body {
   background-color: #fefcf4;
 }
@@ -52,3 +56,77 @@ h1 {
   margin: auto;
   /*background-color: green;*/
 }
+
+
+
+
+/*
+
+body {
+  background-color: #fefcf4;
+}
+h1 {
+  font-family: Georgia;
+  text-align: left;
+  font-size: 20pt;
+  border-style: solid;
+  border-color: #ed7d28;
+  border-width: 4px;
+  background-size: 50%;
+  background-color: #ed7d28;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
+
+}
+
+#center {
+  background-color: #f4f1eb;
+  border-radius: 0px;
+  box-shadow: 0 0 15px gray;
+  margin: auto;
+  text-align: center;
+  width: 600px;
+  height: 330px;
+  text-align: center;
+  font-size: 14pt;
+  font-weight: none;
+
+}
+*/
+
+/*
+#wrap {
+  width:80%;
+  background-color: #3d6dba;
+  margin: auto;
+}
+*/
+
+/*
+#main div {
+	background-color: #ed7d28;
+	border-radius: 0px;
+	box-shadow: 0 0 15px gray;
+	float: left;
+	margin: 2%;
+	text-align: center;
+	width: 330px;
+	height: 330px;
+}
+#main {
+  font-family: Georgia, serif;
+  font-size: 26pt;
+  font-weight: bold;
+  text-align: center;
+  width:auto;
+  margin: auto;
+
+*/
+
+  /*background-color: green;*/
+
+  /*
+}
+
+*/
